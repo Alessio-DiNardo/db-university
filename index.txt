@@ -4,7 +4,7 @@
 20/06/2020 (21)
 
 
-8. Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
+
 
 
 
@@ -29,7 +29,10 @@
         WHERE `year`= '1'; 
 
 
-
+ 5      SELECT *
+        FROM `exams`
+        WHERE `exams`.`date` = '2020-06-20'
+        AND `exams`.`hour`>= '14:00';     
 
 
 
