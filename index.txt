@@ -16,4 +16,4 @@ laurea (286)
 
  1       SELECT *
         FROM `students`
-        WHERE `date_of_birth` >= '1990-01-01;
+        WHERE `date_of_birth` >= '1990'
