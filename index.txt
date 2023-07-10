@@ -1,6 +1,6 @@
 
 
- 1      SELECT *
+ 1      SELECT COUNT(id)
         FROM `students`
         WHERE `date_of_birth` >= '1990';
 
@@ -34,6 +34,6 @@
         FROM `departments`;   12
 
 
- 8      SELECT *
+ 8      SELECT COUNT(id)
         FROM `teachers`
         WHERE `phone` IS NULL;  
