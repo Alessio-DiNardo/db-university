@@ -43,18 +43,10 @@
 
         -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-       4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui
-       sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e
-       nome
-       5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
-       6. Selezionare tutti i docenti che insegnano nel Dipartimento di
-       Matematica (54)
-       7. BONUS: Selezionare per ogni studente il numero di tentativi sostenuti
-       per ogni esame, stampando anche il voto massimo. Successivamente,
-       filtrare i tentativi con voto minimo 18.
 
 
-
+       JOIN
+       
 
    1   SELECT *
        FROM `students`
@@ -103,4 +95,25 @@
        JOIN `departments`
        ON `degrees`.`department_id` = `departments`.`id`
        WHERE `departments`.`name` = 'Dipartimento di Matematica';
- 
+       
+
+
+       GROUP BY
+
+
+   1   SELECT COUNT(id) AS `numero iscritti`, YEAR(`enrolment_date`) AS `anno`
+       FROM `students`
+       GROUP BY `anno`;   
+
+   2   SELECT COUNT(id) AS `insegnanti`, `office_address` 
+       FROM `teachers` 
+       GROUP BY `office_address`;
+
+   3   SELECT(`exam_id`), AVG(`vote`)
+       FROM `exam_student` 
+       GROUP BY `exam_id`;
+
+   4   SELECT COUNT(id) AS `corsi_laurea`, `department_id` 
+       FROM `degrees`
+       GROUP BY `department_id`;
+       
